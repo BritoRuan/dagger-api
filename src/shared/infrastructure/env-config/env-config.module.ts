@@ -4,7 +4,8 @@ import { ConfigModule, ConfigModuleOptions } from '@nestjs/config';
 import { join } from 'node:path';
 
 @Module({
-  providers: [EnvConfigService]
+  providers: [EnvConfigService],
+  imports: [ConfigModule],
 })
 export class EnvConfigModule extends ConfigModule {
   static async forRoot(options: ConfigModuleOptions = {}): Promise<DynamicModule> {
