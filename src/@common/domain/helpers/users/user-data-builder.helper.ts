@@ -1,4 +1,4 @@
-import { UserProps } from '@/users/domain/entities/user.entity';
+import { UserProps } from '@/users/domain/types/user.props.types'
 import { faker } from '@faker-js/faker'
 
 
