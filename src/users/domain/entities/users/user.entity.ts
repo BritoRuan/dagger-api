@@ -1,15 +1,12 @@
-export type UserProps = {
-    name: string
-    email: string
-    password: string
-    createdAt?: Date
-}
+import { BaseEntity } from "@/@common/domain/entities/entity"
+import { UserProps } from "../../types/user.props.types"
 
-export class UserEntity {
-    constructor(public readonly props: UserProps) {
+export class UserEntity extends BaseEntity<UserProps> {
+    constructor(public readonly props: UserProps, id?: string) {
+        super(props, id)
         this.props.createdAt = this.props.createdAt ?? new Date()
     }
-    
+
     get name() {
         return this.props.name
     }
